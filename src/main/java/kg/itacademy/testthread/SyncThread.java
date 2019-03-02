@@ -32,7 +32,7 @@ class DiploThread implements Runnable{
         this.printer = printer;
     }
     @Override
-    public void run(){
+    public void run() {
         printer.printDoc(5,"Дипломы");
     }
 }
@@ -53,7 +53,10 @@ public class SyncThread extends Thread{
         Printer localPrinter = new Printer();
 
         SyncThread syncThread = new SyncThread(localPrinter);
+
         //syncThread.printer.printDoc(5, "Военный");
+        //syncThread.setName("Феттель");
+        //syncThread.getName();
         syncThread.start();
         new Thread(new PaspThread(localPrinter)).start();
         new Thread(new DiploThread(localPrinter)).start();
